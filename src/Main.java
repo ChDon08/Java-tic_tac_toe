@@ -296,28 +296,28 @@ void winningrules(String[][] campo) {
         playSoundwin();
     } else if (campo[0][0].equals("o") && campo[1][0].equals("o") && campo[2][0].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     } else if (campo[0][1].equals("o") && campo[1][1].equals("o") && campo[2][1].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     } else if (campo[0][2].equals("o") && campo[1][2].equals("o") && campo[2][2].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     } else if (campo[0][0].equals("o") && campo[0][1].equals("o") && campo[0][2].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     } else if (campo[1][0].equals("o") && campo[1][1].equals("o") && campo[1][2].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     } else if (campo[2][0].equals("o") && campo[2][1].equals("o") && campo[2][2].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     } else if (campo[0][0].equals("o") && campo[1][1].equals("o") && campo[2][2].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     } else if (campo[2][0].equals("o") && campo[1][1].equals("o") && campo[0][2].equals("o")) { //prima riga
         System.out.println("Abbiamo un vincitore!!!");
-        playSoundwin();
+        playSoundlose();
     }
 }
 
