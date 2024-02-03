@@ -80,7 +80,7 @@ void main() throws InterruptedException {
                     y = (int) (Math.random() % 3);
                     if (campo[y][x].equals("*"))
                         campo[y][x] = "o";
-                } while (campo[y][x].equals("x") && campo[y][x].equals("o"));
+                } while (campo[y][x].equals("o"));
             }
 
         }
@@ -96,7 +96,7 @@ void main() throws InterruptedException {
                     y = (int) (Math.random() % 3);
                     if (campo[y][x].equals("*"))
                         campo[y][x] = "o";
-                } while (campo[y][x].equals("x") && campo[y][x].equals("o"));
+                } while (campo[y][x].equals("o"));
             }
 
         }
@@ -112,13 +112,12 @@ void main() throws InterruptedException {
                     y = (int) (Math.random() % 3);
                     if (campo[y][x].equals("*"))
                         campo[y][x] = "o";
-                } while (campo[y][x].equals("x") && campo[y][x].equals("o"));
+                } while (campo[y][x].equals("o"));
             }
 
         }
         //howmuchhard 100
         if (howmuchhard == 100) {
-            boolean varbool = possibility == Math.random() % 4;
             campo = computer(campo);
         }
         winningrules(campo);
@@ -221,7 +220,7 @@ String[][] computer(String[][] campo) throws InterruptedException {
     return campo;
 }
 
-int pvp() { //giocatore 1 "x", giocatpre 2 "y"
+void pvp() { //giocatore 1 "x", giocatpre 2 "y"
     String[][] campo;
     campo = new String[3][3];
     campo = griglia(campo);
@@ -252,6 +251,7 @@ int pvp() { //giocatore 1 "x", giocatpre 2 "y"
                 campo[y][x] = "*";
         } while (!campo[y][x].equals("x") || annulla_mossa.equals("Si"));
         winningrules(campo);
+        
         do {
             System.out.println("giocatore 2, inserire coordinata X");
             x = in.nextInt();
@@ -328,7 +328,7 @@ void winningrules(String[][] campo) {
 }
 
 //suono vittoria PvP giocatore 1 e PvE
-public void playSoundwin() {
+void playSoundwin() {
     try {
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("sounds/win.wa").getAbsoluteFile());
         Clip clip = AudioSystem.getClip();
@@ -341,7 +341,7 @@ public void playSoundwin() {
 }
 
 //suuono sconfitta PvE e vittoria PvP giocatore 2
-public void playSoundlose() {
+void playSoundlose() {
     try {
         AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("sounds/lose.wav").getAbsoluteFile());
         Clip clip = AudioSystem.getClip();
