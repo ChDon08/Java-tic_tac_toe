@@ -18,6 +18,7 @@ void main() throws InterruptedException {
     print(campo);
     String modalita;
     System.out.println();
+    int possibility = 0; //possibilità
     // /==\
     //  ||
     //  ||
@@ -33,7 +34,6 @@ void main() throws InterruptedException {
 
     //selettore difficoltà facile difficile
     int howmuchhard;
-    int possibility = 0; //possibilità
     do {
         System.out.println("Selettore difficoltà ");
         System.out.println("25 - 50 - 75 - 100");
@@ -70,45 +70,51 @@ void main() throws InterruptedException {
 
         //howmuchhard 25
         if (howmuchhard == 25) {
-            boolean varbool = possibility == Math.random() % 4;
+            possibility = (int) (Math.random() % (4));
             if (possibility == 0) {
                 campo = computer(campo);
             } else {
-                x = (int) (Math.random() % 3);
-                Thread.sleep(1000);
-                y = (int) (Math.random() % 3);
-                if (campo[y][x].equals("*"))
-                    campo[y][x] = "o";
+                do {
+                    x = (int) (Math.random() % 3);
+                    Thread.sleep(1000);
+                    y = (int) (Math.random() % 3);
+                    if (campo[y][x].equals("*"))
+                        campo[y][x] = "o";
+                } while (campo[y][x].equals("x") && campo[y][x].equals("o"));
             }
-            while (campo[y][x].equals("x") && campo[y][x].equals("o")) ;
+
         }
         //howmuchhard 50
         if (howmuchhard == 50) {
-            boolean varbool = possibility == Math.random() % 4;
+            possibility = (int) (Math.random() % (4));
             if (possibility == 0 || possibility == 1) {
                 campo = computer(campo);
             } else {
-                x = (int) (Math.random() % 3);
-                Thread.sleep(1000);
-                y = (int) (Math.random() % 3);
-                if (campo[y][x].equals("*"))
-                    campo[y][x] = "o";
+                do {
+                    x = (int) (Math.random() % 3);
+                    Thread.sleep(1000);
+                    y = (int) (Math.random() % 3);
+                    if (campo[y][x].equals("*"))
+                        campo[y][x] = "o";
+                } while (campo[y][x].equals("x") && campo[y][x].equals("o"));
             }
-            while (campo[y][x].equals("x") && campo[y][x].equals("o")) ;
+
         }
         //howmuchhard 75
         if (howmuchhard == 75) {
-            boolean varbool = possibility == Math.random() % 4;
+            possibility = (int) (Math.random() % (4));
             if (possibility == 0 || possibility == 1 || possibility == 2) {
                 campo = computer(campo);
             } else {
-                x = (int) (Math.random() % 3);
-                Thread.sleep(1000);
-                y = (int) (Math.random() % 3);
-                if (campo[y][x].equals("*"))
-                    campo[y][x] = "o";
+                do {
+                    x = (int) (Math.random() % 3);
+                    Thread.sleep(1000);
+                    y = (int) (Math.random() % 3);
+                    if (campo[y][x].equals("*"))
+                        campo[y][x] = "o";
+                } while (campo[y][x].equals("x") && campo[y][x].equals("o"));
             }
-            while (campo[y][x].equals("x") && campo[y][x].equals("o")) ;
+
         }
         //howmuchhard 100
         if (howmuchhard == 100) {
@@ -205,12 +211,12 @@ String[][] computer(String[][] campo) throws InterruptedException {
     else {
         int x, y;
         do {
-            x = (int) (Math.random() % 3);
+            x = (int) (Math.random() % (3));
             Thread.sleep(1000);
             y = (int) (Math.random() % 3);
             if (campo[y][x].equals("*"))
                 campo[y][x] = "o";
-        } while (campo[y][x].equals("x") && campo[y][x].equals("o"));
+        } while (campo[y][x].equals("o"));
     }
     return campo;
 }
